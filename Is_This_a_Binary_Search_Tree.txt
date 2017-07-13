@@ -1,0 +1,51 @@
+boolean checkBST(Node root) 
+    {
+        if(root.left == null && root.right == null)
+            return true;
+        int tempval = 0;
+        if(root == null)
+            return false;
+        Stack<Node> stackT = new Stack<Node>();
+        Node currnode = root;
+        stackT.push(currnode);
+        while(currnode.left != null)
+        {
+            stackT.push(currnode.left);
+            currnode = currnode.left;
+        }
+        while(!stackT.empty())
+        {
+            currnode = stackT.pop();
+            
+            if(currnode.data > tempval)
+                tempval = currnode.data;
+            else
+                return false;
+            if(currnode.right != null){
+                currnode = currnode.right;
+                while(currnode != null){
+                    stackT.push(currnode);
+                    currnode = currnode.left;
+                }
+            }
+        }
+        return true;
+    }
+	
+	
+RECURSSIVE:
+
+    static int tempval = 0;
+    
+    boolean checkBST(Node root) 
+    {
+        if(root == null)
+            return true;
+        boolean tp = checkBST(root.left);
+        if(root.data > tempval)
+            tempval = root.data;
+        else
+            return (tp&&false);
+        boolean tp1 = checkBST(root.right);
+        return (tp&&tp1&&true);
+    }
