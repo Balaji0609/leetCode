@@ -1,0 +1,92 @@
+import java.io.*;
+import java.util.*;
+
+/*
+ * Find the minimum unique number among the two arrays.
+ */
+
+class Solution {
+  
+  public static int minimumUnique(int[] a, int[] b)
+  {
+      int minval = Integer.MAX_VALUE;
+      HashMap<Integer,Integer> hmap = new HashMap<Integer,Integer>();
+      for(int i = 0; i < a.length; i++)
+      {
+        hmap.put(a[i],hmap.getOrDefault(a[i],0)+1);
+      }
+      for(int i = 0; i < b.length; i++)
+      {
+        hmap.put(b[i],hmap.getOrDefault(b[i],0)+1);
+      }
+    
+      for(Map.Entry<Integer,Integer> entry: hmap.entrySet())
+      {
+        if(entry.getValue() == 1 && entry.getKey() < minval)
+        {
+          minval = entry.getKey();
+        }
+      }
+      return minval;
+  }
+  public static void main(String[] args) {
+    int[] a = new int[] {1,3,8,9,2,3,6,7}; // unsorted
+    int[] b = new int[] {4,9,4,6,5,7,3,1};
+   
+    
+    System.out.println("The min unique value: " + minimumUnique(a,b));
+  }
+  
+
+}
+
+
+// Design a public parking garage
+
+//Parking Structure:
+
+ParkingSpace
+{
+
+}
+ParkingStructure
+{
+  ParkingSpace()
+}
+  
+//Parking person:
+  
+ParkingPerson()
+{
+  Park();
+  Unpark();
+}
+
+//Parking Signs:
+
+HandiCappedSign
+{
+
+}
+ParkingSign
+{
+  HandiCappedSign
+}
+
+//Entrance
+Entrance
+{
+  
+  carEntry();
+  carExit();
+}
+
+//Payment
+
+Payment 
+{
+  ParkingSpace 
+  entrytime
+  exittime
+  Parker
+}
