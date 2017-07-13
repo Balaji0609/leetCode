@@ -1,0 +1,54 @@
+ static String findLongestSubstring(String input) 
+    {
+        if(input.length() == 0)
+            return null;
+        int curLength = 1, maxLength = 0;
+        int lastSeenCharCount = 1;
+        char lastSeenChar = input.charAt(0);
+        int gStart = 0, lStart = 0;
+        char var1 = input.charAt(0);
+        char var2 = 0;
+        for(int i = 1; i < input.length() ; i++)
+        {
+            if(var1 == input.charAt(i))
+            {
+                curLength += 1;
+            }
+            else if(var2 == 0)
+            {
+                var2 = input.charAt(i);
+                curLength += 1;
+                
+            }
+            else if(var2 == input.charAt(i))
+            {
+                curLength += 1;   
+            }
+            else
+            {
+                if(var1 == lastSeenChar)
+                    var2 = input.charAt(i);
+                else
+                    var1 = input.charAt(i);
+                if(curLength > maxLength)
+                {
+                    maxLength = curLength;
+                    gStart = lStart;
+                    curLength = lastSeenCharCount + 1;
+                    lStart = i - lastSeenCharCount;
+                }
+            }
+            if(lastSeenChar != input.charAt(i))
+            {
+                lastSeenChar = input.charAt(i);
+                lastSeenCharCount = 0;
+            }
+            lastSeenCharCount++;
+        }
+        if(curLength > maxLength)
+        {
+            maxLength = curLength;
+            gStart = lStart;
+        }
+        return input.substring(gStart, gStart+maxLength);
+    }
