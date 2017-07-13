@@ -1,0 +1,71 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution 
+{
+    List<Integer> returnVal = new ArrayList<Integer>();
+    List<Integer> rightList = new ArrayList<Integer>();
+    public void findLeafs(TreeNode root)
+    {
+        if(root == null)
+            return;
+        if(root.left == null && root.right == null)
+        {
+            returnVal.add(root.val);
+            return;
+        }
+        findLeafs(root.left);
+        findLeafs(root.right);
+        return;
+    }
+    
+    public List<Integer> boundaryOfBinaryTree(TreeNode root) 
+    {
+        if(root == null)
+            return returnVal;
+        if(root.left == null && root.right == null)
+        {
+            returnVal.add(root.val);
+            return returnVal;
+        }
+        returnVal.add(root.val);
+        TreeNode temp = new TreeNode(0);
+        if(root.left != null)
+        {
+            temp = root.left;
+            while(!(temp.left == null && temp.right == null))
+            {
+                returnVal.add(temp.val);
+                if(temp.left != null)
+                    temp = temp.left;
+                else
+                    temp = temp.right;
+            }
+        }
+        findLeafs(root);
+        if(root.right != null)
+        {
+            temp = root.right;
+            while(!(temp.left == null && temp.right == null))
+            {
+                rightList.add(temp.val);
+                if(temp.right != null)
+                    temp = temp.right;
+                else
+                    temp = temp.left;
+            }
+        }
+        if(rightList.size() != 0)
+        {
+            Collections.reverse(rightList);
+            returnVal.addAll(rightList);
+        }
+        return returnVal;
+    }
+}
