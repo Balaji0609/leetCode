@@ -11,8 +11,30 @@
 
 package leetCode;
 
+import java.util.Iterator;
+import java.util.List;
+
 public class FlattenNestedIterator_341 
 {
-	
+	public class NestedIterator implements Iterator<Integer> 
+	{
+	    List<NestedInteger> nestedList;
+	    public NestedIterator(List<NestedInteger> nestedList) 
+	    {
+	        this.nestedList = nested
+	        
+	    }
+	    
+	    @Override
+	    public Integer next() 
+	    {
+	        
+	    }
 
+	    @Override
+	    public boolean hasNext() 
+	    {
+	        
+	    }
+	}
 }
