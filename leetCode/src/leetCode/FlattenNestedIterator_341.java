@@ -11,6 +11,7 @@
 
 package leetCode;
 
+import NestedInteger;
 import java.util.Iterator;
 import java.util.List;
 
@@ -21,7 +22,8 @@ public class FlattenNestedIterator_341
 	    List<NestedInteger> nestedList;
 	    public NestedIterator(List<NestedInteger> nestedList) 
 	    {
-	        this.nestedList = nested
+	        List<leetCode.NestedInteger> nested;
+			this.nestedList = nested;
 	        
 	    }
 	    
