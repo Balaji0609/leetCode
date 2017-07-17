@@ -19,7 +19,9 @@ public class Find_maxstr {
 				mp.put(ch, 1);
 		}
 		int i = 0;
+		@SuppressWarnings("unused")
 		char c = 0;
+		@SuppressWarnings("unused")
 		int v;
 		while(i < str.length())
 		{
