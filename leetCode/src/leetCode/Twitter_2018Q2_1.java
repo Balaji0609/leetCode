@@ -1,4 +1,10 @@
+package leetCode;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Twitter_2018Q2_1
+{
     static int maxMoves(String s, String t) 
     {
         int result = 0;
@@ -35,4 +41,6 @@
             }
         }
         return result;
+    }
+}
     
