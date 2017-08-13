@@ -1,4 +1,9 @@
- static void computeLPSArray(String pat, int M, int lps[])
+package leetCode;
+
+
+public class Twitter_2018Q1
+{
+	static void computeLPSArray(String pat, int M, int lps[])
     {
         int len = 0;
         int i = 1;
@@ -55,3 +60,4 @@
         }
         return -1;
     }
+}
