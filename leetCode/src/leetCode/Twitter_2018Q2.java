@@ -3,7 +3,7 @@ package leetCode;
 import java.util.HashMap;
 import java.util.Map;
 
-public class twitter_2018Q2
+public class Twitter_2018Q2
 {
     public int findComplement(String s, String t) 
     {
