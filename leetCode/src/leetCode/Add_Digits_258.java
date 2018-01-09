@@ -1,5 +1,5 @@
 package leetCode;
-
+//Simple program to add the digits
 public class Add_Digits_258 
 {
     public int addDigits(int num) 
