@@ -1,0 +1,9 @@
+ This Directory contains all the most important high frequency questions in leetcode.
+
+
+
+
+TARGET: 
+	To complete 160 of them,
+START:
+	09/07/2018
